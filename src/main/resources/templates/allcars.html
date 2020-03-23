@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carro: <stan th:text ="${id}"></stan></title>
+    <style>
+        th{
+            background:#4B0082;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        #Name{
+            display:flex;
+            justify-content: center;
+        }
+        h2{
+            display:flex;
+            justify-content: center;
+            color:whitesmoke;
+            padding: 15px;
+            background-color:#4B0082;
+        }
+       
+        th{
+            text-align: left;
+            color:whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2>Carros</h2> 
+        <h3>
+            <table width="500px">
+                    <thead>
+                        <tr>
+                            <th >Modelo</th>
+                            <th >Placa</th>
+                            <th >Cor</th>
+                            <th >Ano</th>
+                        </tr>
+                    </thead>
+                        <tr th:each="cars:${cars}">    
+                        <td th:text="${cars?.modelo}"/> 
+                        <td th:text="${cars?.placa}"/>     
+                        <td th:text="${cars?.cor}"/>
+                        <td th:text="${cars?.ano}"/>
+                    
+                    
+            </tr>
+            </table>
+        </h3>    
+    </div>
+</body>
+</html>

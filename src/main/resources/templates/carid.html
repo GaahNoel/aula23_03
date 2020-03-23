@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carro: <stan th:text ="${id}"></stan></title>
+    <style>
+        th{
+            background:#4B0082;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        #Name{
+            display:flex;
+            justify-content: center;
+        }
+        h2{
+            display:flex;
+            justify-content: center;
+            color:whitesmoke;
+            padding: 15px;
+            background-color:#4B0082;
+        }
+       
+        th{
+            text-align: left;
+            color:whitesmoke;
+        }
+        #Erro{
+            color:white;
+            padding: 25px;
+            background-color:red;
+            
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${car}">
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2>Carro ID: <stan th:text="${id}"/> </h2> 
+        <h3>
+            <table width="500px">
+                    <thead>
+                        <tr>
+                            <th >Modelo</th>
+                            <th >Placa</th>
+                            <th >Cor</th>
+                            <th >Ano</th>
+                        </tr>
+                    </thead>
+                <tr>    
+                    <td th:text="${car?.modelo}"/> 
+                    <td th:text="${car?.placa}"/>     
+                    <td th:text="${car?.cor}"/>
+                    <td th:text="${car?.ano}"/>
+                    
+            </tr>
+            </table>
+        </h3>    
+    </div>
+    <div th:unless="${car}">
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2 id="Erro">ERRO 101 - Carro Inválido</h2>  
+    </div>
+</body>
+</html>
